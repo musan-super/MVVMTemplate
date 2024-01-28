@@ -1,0 +1,32 @@
+﻿<Window
+    x:Class="MVVMTemplate.Views.TestWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MVVMTemplate.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="clr-namespace:MVVMTemplate.ViewModels"
+    Title="TestWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <viewmodel:ViewModelTemplate />
+    </Window.DataContext>
+    <Grid>
+        <TextBlock
+            Width="100"
+            Height="50"
+            HorizontalAlignment="Left"
+            Background="yellow"
+            Text="{Binding Variate, UpdateSourceTrigger=PropertyChanged}" />
+        <Button
+            Width="100"
+            Height="50"
+            HorizontalAlignment="Right"
+            Background="green"
+            Command="{Binding AddRelayCommand}"
+            CommandParameter="按钮"
+            Content="按钮" />
+    </Grid>
+</Window>
